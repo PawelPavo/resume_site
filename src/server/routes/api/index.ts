@@ -1,9 +1,8 @@
 import * as express from 'express';
+import languagesRouter from './languages';
 
 const router = express.Router();
 
-router.get('/api/hello', (req, res, next) => {
-    res.json('World');
-});
+router.use('/languages', languagesRouter);
 
 export default router;
