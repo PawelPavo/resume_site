@@ -7,6 +7,9 @@ import { ILanguages } from '../utils/interfaces';
 import { useLocation } from 'react-router-dom';
 import { getPathText } from '../utils/pathing';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+import AboutMe from '../components/AboutMe';
+import { MdSwapHoriz } from "react-icons/md";
 
 const Home: React.FC<IHome> = () => {
     const { pathname } = useLocation()
@@ -36,14 +39,14 @@ const Home: React.FC<IHome> = () => {
         <>
             <Helmet>
                 <title>
-                    Home
+                    {PathText}
                 </title>
             </Helmet>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="display-4 ">{PathText}</div>
                 </div>
-                <div className="row">
+                <div className="row justify-content-center my-5">
                     <div className="col-md-8 my-auto">
                         <div className="row">
                             <div className="col-4">
@@ -53,14 +56,16 @@ const Home: React.FC<IHome> = () => {
                                     <img src="https://news-api.s3.us-east-2.amazonaws.com/profile.jpg" alt="My Photo" className="img-thumbnail" />
                                 </OverlayTrigger>
                             </div>
-                            <div
-                                className="col-md-6 my-auto"
-                                style={{ textAlign: "justify" }}>
-                                Self-motivated Junior Full-Stack Developer with a demonstrated history of working in the digital marketing and advertising industry. Skilled in full-stack application development using ReactJS, JavaScript, TypeScript, NodeJS, Tailwind, CSS and more. Creative and dependable team player with a passion for new technologies and software innovation.
+                            <div className="col-8 my-auto text-center">
+                                {/* <AboutMe /> */}
+                                <div className="display-1 d-none d-lg-block d-print-block">
+                                    <MdSwapHoriz />
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4 border p-5 shadow-sm">
+                        <Title>My Skills:</Title>
                         {languages.map(language => (
                             <PercetageBar key={language.id} language={language} />
                         ))}
@@ -71,7 +76,12 @@ const Home: React.FC<IHome> = () => {
     )
 }
 
-export interface IHome {
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #2F4E6F;
+  font-family: "Courier New", Courier, monospace
+`;
 
-}
+export interface IHome { }
 export default Home;

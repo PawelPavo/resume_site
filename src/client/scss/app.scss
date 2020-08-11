@@ -18,6 +18,11 @@ $theme-colors: (
     font-size: 95%;
 }
 
+@media only screen and (max-width : 767px) {
+    .box {
+        height: auto !important;
+    } 
+}
 
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
