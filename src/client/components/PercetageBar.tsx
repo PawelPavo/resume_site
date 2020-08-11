@@ -1,14 +1,10 @@
 import * as React from 'react'
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import { ILanguages } from '../utils/interfaces';
 
-const PercetageBar: React.FC<IPercetageBar> = () => {
+const PercetageBar: React.FC<IPercetageBar> = props => {
 
-    const renderTooltip = (props: any) => (
-        <Tooltip id="button-tooltip" {...props}>
-            80%
-        </Tooltip>
-    );
     return (
         <>
             <div
@@ -16,14 +12,18 @@ const PercetageBar: React.FC<IPercetageBar> = () => {
                 style={{ height: "30px" }}>
                 <OverlayTrigger
                     placement="left"
-                    overlay={renderTooltip}>
+                    overlay={
+                        <Tooltip id={`tooltip-${props.language.id}`}>
+                            <div>{props.language.percentage}%</div>
+                        </Tooltip>
+                    }>
                     <div className="progress-bar shadow text-monospace progress-bars-hover"
                         role="progressbar"
                         style={{
-                            backgroundColor: "#00d8fe",
-                            width: "80%",
+                            backgroundColor: `${props.language.color}`,
+                            width: `${props.language.percentage}%`,
                             opacity: "0.8"
-                        }}>ReactJS</div>
+                        }}>{props.language.language_name}</div>
                 </OverlayTrigger>
             </div>
         </>
@@ -31,6 +31,7 @@ const PercetageBar: React.FC<IPercetageBar> = () => {
 }
 
 export interface IPercetageBar {
+    language: ILanguages;
 
 }
 export default PercetageBar;
