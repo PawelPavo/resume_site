@@ -1,0 +1,23 @@
+$theme-colors: (
+    'primary': #0091ea //Covalence Blue!  :D
+);
+
+.nav-bar-text {
+    color: #98B1C4;
+}
+
+.nav-bar-active {
+    color: #03619e;
+}
+
+.progress-bars-hover:hover {
+    box-shadow: 0 5px 15px rgba(33,33,33,.2);
+    transform: translateY(1px);
+    text-decoration: none;
+    opacity: 0;
+    font-size: 95%;
+}
+
+
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
