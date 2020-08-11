@@ -4,22 +4,27 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import PercetageBar from '../components/PercetageBar';
 import { useState, useEffect } from 'react';
 import { ILanguages } from '../utils/interfaces';
+import { useLocation } from 'react-router-dom';
+import { getPathText } from '../utils/pathing';
+import { Helmet } from 'react-helmet';
 
 const Home: React.FC<IHome> = () => {
+    const { pathname } = useLocation()
+    const PathText = getPathText(pathname)
 
     const [languages, setLanguages] = useState<ILanguages[]>([]);
 
     useEffect(() => {
         (async () => {
-          try {
-            let res = await fetch('/api/languages');
-            let languages = await res.json();
-            setLanguages(languages);
-          } catch (error) {
-            console.log(error);
-          }
+            try {
+                let res = await fetch('/api/languages');
+                let languages = await res.json();
+                setLanguages(languages);
+            } catch (error) {
+                console.log(error);
+            }
         })();
-      }, []);
+    }, []);
 
     const renderTooltipPic = (props: any) => (
         <Tooltip id="button-tooltip" {...props}>
@@ -29,9 +34,14 @@ const Home: React.FC<IHome> = () => {
 
     return (
         <>
+            <Helmet>
+                <title>
+                    Home
+                </title>
+            </Helmet>
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="display-4 ">Home</div>
+                    <div className="display-4 ">{PathText}</div>
                 </div>
                 <div className="row">
                     <div className="col-md-8 my-auto">
