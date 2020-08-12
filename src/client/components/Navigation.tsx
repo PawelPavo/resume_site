@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const NavigationBar: React.FC<INavigationBar> = () => {
     return (
         <>
-            <div className="row no-gutters shadow-sm p-3 my-5 border text-center" >
+            <div className="row no-gutters shadow-sm p-3 border text-center" >
                 <NavLink
                     className="col text-decoration-none nav-bar-text"
                     exact to="/"

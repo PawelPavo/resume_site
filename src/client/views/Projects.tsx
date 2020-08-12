@@ -18,8 +18,11 @@ const Projects: React.FC<IProjects> = () => {
 
     return (
         <>
-            <ThemeProvider theme={!checked ? darkTheme: lightTheme}>
+            <ThemeProvider theme={!checked ? lightTheme : darkTheme}>
                 <BodyWrapper>
+                    <div className="row justify-content-center p-2">
+                        <Switch onChange={handleChange} checked={checked} />
+                    </div>
                     <NavigationBar />
                     <Helmet >
                         <title>
@@ -30,9 +33,6 @@ const Projects: React.FC<IProjects> = () => {
                         <div className="row justify-content-center">
                             <div className={!checked ? `${"display-4 text-dark"}` : "display-4 text-light"}>{PathText}</div>
                         </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <Switch onChange={handleChange} checked={checked} />
                     </div>
                 </BodyWrapper>
             </ThemeProvider>
@@ -48,7 +48,7 @@ const BodyWrapper = styled.div`
     height: ${({ theme }) => theme.height};
 `;
 
-const lightTheme = {
+const darkTheme = {
     body: "#718096",
     position: "fixed",
     width: "100%",
@@ -57,23 +57,13 @@ const lightTheme = {
     color: "white"
 }
 
-const darkTheme = {
+const lightTheme = {
     body: "#FFFFFF",
     position: "fixed",
     width: "100%",
     height: "100vh",
     transition: "all 500ms ease",
 }
-
-// const DarkBodyWrapper = styled.div`
-//     background: #718096;
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     transition: all 500ms ease;
-//     color: white;
-// `;
-
 
 export interface IProjects { }
 export default Projects;
