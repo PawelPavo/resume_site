@@ -2,6 +2,7 @@ import * as React from 'react';
 import { getPathText } from '../utils/pathing';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from "react-helmet";
+import NavigationBar from '../components/Navigation';
 
 
 const Contact: React.FC<IContact> = () => {
@@ -11,6 +12,7 @@ const Contact: React.FC<IContact> = () => {
 
     return (
         <>
+            <NavigationBar />
 
             <Helmet>
                 <title>

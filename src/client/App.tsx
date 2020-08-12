@@ -9,7 +9,6 @@ import Contact from './views/Contact';
 const App: React.FC<IApp> = () => {
 	return (
 		<BrowserRouter>
-			<NavigationBar />
 			<Switch>
 				<Route exact path="/">
 					<Home />

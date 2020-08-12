@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import AboutMe from '../components/AboutMe';
 import { MdSwapHoriz } from "react-icons/md";
+import NavigationBar from '../components/Navigation';
 
 const Home: React.FC<IHome> = () => {
     const { pathname } = useLocation()
@@ -37,6 +38,8 @@ const Home: React.FC<IHome> = () => {
 
     return (
         <>
+            <NavigationBar />
+
             <Helmet>
                 <title>
                     {PathText}
