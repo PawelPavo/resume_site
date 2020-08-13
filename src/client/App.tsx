@@ -17,6 +17,7 @@ const App: React.FC<IApp> = () => {
 	const handleTheme = async (checked: any) => {
 		setChecked(checked)
 	}
+	
 	return (
 		<ThemeProvider theme={!checked ? lightTheme : darkTheme}>
 			<BrowserRouter>
@@ -26,7 +27,7 @@ const App: React.FC<IApp> = () => {
 				<NavigationBar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Home theme={checked} />
 						</Route>
 						<Route exact path="/about">
 							<AboutMe />

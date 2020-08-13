@@ -14,7 +14,7 @@ const NavigationDark: React.FC<INavigationDark> = () => {
                     className="col text-decoration-none nav-bar-text "
                     exact to="/about"
                     activeClassName="nav-bar-active"
-                >About Me</NavLink>
+                >Bio</NavLink>
                 <NavLink
                     className="col text-decoration-none nav-bar-text "
                     exact to="/projects"
@@ -24,7 +24,7 @@ const NavigationDark: React.FC<INavigationDark> = () => {
                     className="col text-decoration-none nav-bar-text "
                     exact to="/contact"
                     activeClassName="nav-bar-active"
-                >Contact Me</NavLink>
+                >Contact</NavLink>
             </div>
         </>
     )
