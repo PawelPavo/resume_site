@@ -1,6 +1,9 @@
-export interface TLanguages {
+export interface TRepos {
     id: number;
-    language_name: string;
-    percentage: number;
-    color: string;
+    reoo_name: string;
+    prepo_description: number;
+    repo_tags: string;
+    repo_image_url: string;
+    created_at: Date;
+    repo_url: string;
 };

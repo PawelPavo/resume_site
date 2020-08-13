@@ -11,4 +11,14 @@ export interface IProjects {
     project_description: string;
     image_url?: string;
     created_at: Date;
+    repo_url:string;
 }
+
+export interface IRepos {
+    id: number;
+    reoo_name: string;
+    prepo_description: number;
+    repo_tags: string;
+    repo_image_url: string;
+    created_at: Date;
+};

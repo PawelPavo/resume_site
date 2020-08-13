@@ -3,11 +3,11 @@ import db from '../../db';
 
 const router = express.Router();
 
-//GET api/languages 
+//GET api/repos 
 router.get('/', async(req,res) => {
     try {
-        const languages = await db.languages.all();
-        res.json(languages);
+        const repos = await db.repos.all();
+        res.json(repos);
     } catch (error) {
         console.log(error)
     }

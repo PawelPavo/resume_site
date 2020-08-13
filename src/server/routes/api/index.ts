@@ -1,10 +1,10 @@
 import * as express from 'express';
-import languagesRouter from './languages';
+import reposRouter from './repos';
 import mailgunRoiuter from './contact'
 
 const router = express.Router();
 
-router.use('/languages', languagesRouter);
+router.use('/repos', reposRouter);
 router.use('/contact', mailgunRoiuter );
 
 export default router;

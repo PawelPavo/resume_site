@@ -7,7 +7,7 @@ import Projects from './views/Projects';
 import Contact from './views/Contact';
 import SwitchButton from "react-switch";
 import NavigationBar from './components/Navigation';
-import AboutMe from './views/AboutMe';
+import Bio from './views/Bio';
 
 
 const App: React.FC<IApp> = () => {
@@ -30,7 +30,7 @@ const App: React.FC<IApp> = () => {
 							<Home theme={checked} />
 						</Route>
 						<Route exact path="/about">
-							<AboutMe />
+							<Bio />
 						</Route>
 						<Route exact path="/projects">
 							<Projects />

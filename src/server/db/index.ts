@@ -18,8 +18,8 @@ export const Query = <T=any>(query?: string, values?: any) => {
     });
 };
 
-import languages from './queries/languages';
+import repos from './queries/repos';
 
 export default {
-    languages
+    repos
 };
