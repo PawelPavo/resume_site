@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 
 
-const Contact: React.FC<IContact> = () => {
+const AboutMe: React.FC<IAboutMe> = () => {
 
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
@@ -25,11 +25,15 @@ const Contact: React.FC<IContact> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="row justify-content-center display-4">{PathText}</div>
+            <div className="row justify-content-center">
+                <AboutMe />
+            </div>
+
         </>
     )
 }
 
-export interface IContact {
+export interface IAboutMe {
 
 }
-export default Contact;
+export default AboutMe;

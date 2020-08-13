@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { lightTheme, darkTheme } from './utils/theme';
-import { GlobalStyles } from './utils/global-style';
 import { ThemeProvider } from 'styled-components';
 import Home from './views/Home';
 import Projects from './views/Projects';
 import Contact from './views/Contact';
 import SwitchButton from "react-switch";
 import NavigationBar from './components/Navigation';
+import AboutMe from './views/AboutMe';
 
 
 const App: React.FC<IApp> = () => {
@@ -27,6 +27,9 @@ const App: React.FC<IApp> = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/about">
+							<AboutMe />
 						</Route>
 						<Route exact path="/projects">
 							<Projects />

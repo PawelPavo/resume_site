@@ -1,6 +1,6 @@
 export const lightTheme = {
 	body: '#FFFFFF',
-	text: '#1a202c',
+	text: '#2f3640',
 	border: '#1a202c',
 };
 

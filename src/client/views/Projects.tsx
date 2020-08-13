@@ -9,9 +9,13 @@ const Projects: React.FC<IProjects> = () => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
 
-
     return (
         <>
+            <Helmet >
+                <title>
+                    {PathText}
+                </title>
+            </Helmet>
             <GlobalStyles>
                 <Helmet >
                     <title>

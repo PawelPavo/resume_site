@@ -12,6 +12,11 @@ const NavigationDark: React.FC<INavigationDark> = () => {
                 >Home</NavLink>
                 <NavLink
                     className="col text-decoration-none nav-bar-text "
+                    exact to="/about"
+                    activeClassName="nav-bar-active"
+                >About Me</NavLink>
+                <NavLink
+                    className="col text-decoration-none nav-bar-text "
                     exact to="/projects"
                     activeClassName="nav-bar-active"
                 >Projects</NavLink>
@@ -25,5 +30,5 @@ const NavigationDark: React.FC<INavigationDark> = () => {
     )
 }
 
-export interface INavigationDark {}
+export interface INavigationDark { }
 export default NavigationDark;
