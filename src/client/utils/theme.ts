@@ -1,7 +1,7 @@
 export const lightTheme = {
 	body: '#FFFFFF',
 	text: '#2f3640',
-	border: '#1a202c',
+	border: '#2f3640',
 };
 
 export const darkTheme = {
