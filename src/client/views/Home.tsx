@@ -4,8 +4,8 @@ import { getPathText } from '../utils/pathing'
 import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import { useState, useEffect } from 'react'
-import { FaGithub, FaInstagram } from 'react-icons/fa'
 import styled from 'styled-components'
+import Footer from '../components/Footer'
 
 
 
@@ -13,7 +13,7 @@ const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [checked, setChecked] = useState<boolean>()
-    const [hi, setHi] = useState<string>('Hi')
+    const [hi, setHi] = useState<string>('Hello!')
 
     useEffect(() => {
         (async () => {
@@ -40,8 +40,6 @@ const Home: React.FC<IHome> = (props) => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-                {/* <div className="row justify-content-center display-4">{PathText}</div> */}
-
                 <Logo>
                     <div className="border border-left-0 border-right-0 border-bottom-0 p-5">
                         <img
@@ -53,19 +51,12 @@ const Home: React.FC<IHome> = (props) => {
                     </div>
                 </Logo>
                 <div className="row justify-content-center">
-                    <small className="text-monospace p-2 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer </small>
+                    <small className="text-monospace py-2 px-5 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer </small>
                 </div>
                 <LogoText>
-    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 px-4">{hi}</div>
+                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{hi}</div>
                 </LogoText>
-                <div className="row justify-content-center fixed-bottom pb-3">
-                    <Icon>
-                        <a target="_blank" href="https://github.com/PawelPavo"><FaGithub /></a>
-                    </Icon>
-                    <Icon>
-                        <a href=""><FaInstagram /></a>
-                    </Icon>
-                </div>
+                <Footer />
             </div>
 
         </>
@@ -81,14 +72,8 @@ const Logo = styled.div`
     opacity: 0.75;
 `;
 
-const Icon = styled.div`
-    font-size: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-`;
-
 const LogoText = styled.div`
-    font-size: 75px;
+    font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
