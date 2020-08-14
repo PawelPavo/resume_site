@@ -5,7 +5,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-	body: '#2f3640',
+	body: '#2f3640 ' ,
 	text: '#cdd6e0',
 	border: '#cdd6e0',
 };

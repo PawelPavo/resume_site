@@ -5,9 +5,7 @@ import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import { useState, useEffect } from 'react'
 import { IRepos } from '../utils/interfaces'
-import styled from 'styled-components'
-import Footer from '../components/Footer'
-
+import RepoCard from '../components/RepoCard'
 
 const Projects: React.FC<IProjects> = () => {
     const { pathname } = useLocation()
@@ -20,14 +18,13 @@ const Projects: React.FC<IProjects> = () => {
             try {
                 let res = await fetch('/api/repos');
                 let repos = await res.json();
+                setRepos(repos)
                 console.log(repos)
             } catch (error) {
                 console.log(error)
             }
         })()
     }, []);
-
-
 
     return (
         <>
@@ -43,11 +40,13 @@ const Projects: React.FC<IProjects> = () => {
                     </title>
                 </Helmet>
             </GlobalStyles>
-
-
             <div className="container">
-                <div className="row justify-content-center display-4">{PathText}</div>
-                <Footer />
+                <div className="row justify-content-center display-4 my-5">{PathText}</div>
+                <div className="row justify-content-center">
+                    {repos.map(repo => (
+                        <RepoCard key={repo.id} repo={repo} />
+                    ))}
+                </div>
             </div>
 
         </>

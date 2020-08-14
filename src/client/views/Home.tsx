@@ -8,7 +8,6 @@ import styled from 'styled-components'
 import Footer from '../components/Footer'
 
 
-
 const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
