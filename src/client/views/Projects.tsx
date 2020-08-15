@@ -18,7 +18,6 @@ const Projects: React.FC<IProjects> = () => {
                 let res = await fetch('/api/repos');
                 let repos = await res.json();
                 setRepos(repos)
-                console.log(repos)
             } catch (error) {
                 console.log(error)
             }

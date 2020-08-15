@@ -1,37 +1,51 @@
 import * as React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { getPathText } from '../utils/pathing';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { GlobalStyles } from '../utils/global-style';
 import { urlRegex } from '../utils/url-regex';
-import e from 'express';
+import { useEffect } from 'react';
+import { IRepos } from '../utils/interfaces';
+import RepoCard from '../components/RepoCard';
 
 
 const repoByTag: React.FC<IrepoByTag> = (props) => {
-    const history = useHistory()
-
     const { pathname } = useLocation()
-    const PathText = getPathText(pathname)
-    console.log(pathname)
     let tag = `${urlRegex(pathname)}`
-    console.log(tag)
-    console.log(PathText)
+
+    const [repos, setRepos] = React.useState<IRepos[]>([])
+
+    useEffect(() => {
+        (async () => {
+            try {
+                let res = await fetch(`/api/repos/${tag}`);
+                let repos = await res.json();
+                setRepos(repos)
+            } catch (error) {
+                console.log(error)
+            }
+        })()
+    }, []);
 
     return (
         <>
             <Helmet >
                 <title>
-                    {PathText}
+                    {tag}
                 </title>
             </Helmet>
             <GlobalStyles>
                 <Helmet >
                     <title>
-                        {PathText}
+                        {tag}
                     </title>
                 </Helmet>
             </GlobalStyles>
-    <div className="row justify-content-center display-4">{PathText} {tag}</div>
+            <div className="row justify-content-center display-4">{tag}</div>
+            <div className="row justify-content-center">
+                {repos.map(repo => (
+                    <RepoCard key={repo.id} repo={repo} />
+                ))}
+            </div>
         </>
     )
 }
