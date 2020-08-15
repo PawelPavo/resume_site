@@ -1,24 +1,41 @@
 import * as React from 'react';
 import { IRepos } from '../utils/interfaces';
-import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
+import { useHistory } from 'react-router-dom';
+import { urlRegex } from '../utils/url-regex';
+import styled from 'styled-components';
 
 
 const RepoCard: React.FC<IRepoCard> = (props) => {
+    const history = useHistory()
+
+
+    const handleClick = async (e:any) => {
+        try {
+            history.push(`/${urlRegex(e.target.innerHTML)}`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <>
 
             <Card>
+                <div className="my-3">
+                    {props.repo.repo_tags.split(',').map(tag => (
+                        <span
+                            onClick={handleClick}
+                            className="btn-sm btn-outline-secondary border mx-1"
+                            key={tag}>{tag}</span>
+                    ))}
+                </div>
                 <div className="text-center">
-                    <img src={props.repo.repo_image_url} className="card-img-top mt-5" style={{ width: "100px", height: "auto" }} />
+                    <img src={props.repo.repo_image_url} className="card-img-top mt-2" style={{ width: "100px", height: "auto" }} />
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">{props.repo.repo_name}</h5>
                     <p className="card-text">{props.repo.repo_description}</p>
-                    {props.repo.repo_tags.split(',').map(tag => (
-                        <span className="badge badge-pill badge-primary p-1 mx-1 shadow" key={tag}>{tag}</span>
-                    ))}
 
                 </div>
 
@@ -50,7 +67,7 @@ const RepoLink = styled.div`
 
 
 export interface IRepoCard {
-    repo: IRepos
+    repo: IRepos;
 }
 
 export default RepoCard;

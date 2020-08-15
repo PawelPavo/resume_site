@@ -1,4 +1,9 @@
 export const getPathText = (pathname: string): string => {
+
+    if (pathname.includes('/tag')) {
+        pathname = '/tag';
+    }
+
     switch (pathname) {
         case '/':
             return 'Welcome';
@@ -8,5 +13,7 @@ export const getPathText = (pathname: string): string => {
             return 'Contact';
         case '/about':
             return 'Bio';
+        case '/tag':
+            return 'Results By Tag';
     }
 }

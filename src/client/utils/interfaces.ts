@@ -22,4 +22,5 @@ export interface IRepos {
     repo_url:string;
     repo_image_url: string;
     created_at: Date;
+    tag: string;
 };
