@@ -1,16 +1,34 @@
 import * as React from 'react';
 import { IRepos } from '../utils/interfaces';
-import { FaGithub } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 import { urlRegex } from '../utils/url-regex';
 import styled from 'styled-components';
+import Swal from 'sweetalert2'
 
 
 const RepoCard: React.FC<IRepoCard> = (props) => {
     const history = useHistory()
 
+    const imageClick = () => {
+        Swal.fire({
+            imageUrl: props.repo.repo_image_url,
+            imageWidth: 400,
+            imageHeight: 400,
+            background: `
+            rgba(47,54,64,0.7)
+            left top
+            no-repeat
+          `,
+            backdrop: `
+            rgba(47,54,64,0.4)
+              url("/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `
+        })
+    }
 
-    const handleClick = async (e:any) => {
+    const handleClick = async (e: any) => {
         try {
             history.push(`/${urlRegex(e.target.innerHTML)}`)
         } catch (error) {
@@ -20,9 +38,34 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
 
     return (
         <>
+            <div className="container mb-5">
+                <div className="row">
+                    <div className="col-md-4 border border-left-0 border-right-0 border-top-0 mb-2">
+                        <h4>
+                            {props.repo.repo_name}
+                        </h4>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3 text-center">
+                        <img
+                            onClick={imageClick}
+                            src={props.repo.repo_image_url}
+                            style={{ width: "150px", height: "auto" }} />
+                    </div>
+                    <div className="col-md-8 my-auto border border-top-0 border-bottom-0">
+                        <div className="text-monospace" style={{ textAlign: "justify" }}><small>{props.repo.repo_description}</small></div>
+                    </div>
+                </div>
+                <div className="row justify-content-end mt-1 pr-md-3">
+                    <div className="col-md-3 text-right ">
+                        <RepoLink >
+                            <a className="pr-md-5" href={props.repo.repo_url}>View Source Code</a>
+                        </RepoLink>
+                    </div>
+                </div>
 
-            <Card>
-                <div className="my-3">
+                <div className="row justify-content-center my-3">
                     {props.repo.repo_tags.split(',').map(tag => (
                         <span
                             onClick={handleClick}
@@ -30,39 +73,16 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
                             key={tag}>{tag}</span>
                     ))}
                 </div>
-                <div className="text-center">
-                    <img src={props.repo.repo_image_url} className="card-img-top mt-2" style={{ width: "100px", height: "auto" }} />
-                </div>
-                <div className="card-body">
-                    <h5 className="card-title">{props.repo.repo_name}</h5>
-                    <p className="card-text">{props.repo.repo_description}</p>
-
-                </div>
-
-                <RepoLink >
-                    <a className="border px-5 py-1 border-left-0 border-right-0" href={props.repo.repo_url}> <FaGithub /></a>
-                </RepoLink>
-            </Card>
-
+                <hr className="my-4"></hr>
+            </div>
         </>
     )
 
 }
 
-const Card = styled.div`
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    min-width: 300px;
-    max-height: 400px;
-    min-height: 400px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-`;
-
 const RepoLink = styled.div`
     text-decoration: none;
-    font-size: 30px;
+    font-size: 12px;
 `;
 
 

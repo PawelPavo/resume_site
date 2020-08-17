@@ -5,9 +5,12 @@ import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import { useState, useEffect } from 'react'
 import { IRepos } from '../utils/interfaces'
-import RepoCard from '../components/RepoCard'
+// import RepoCard from '../components/RepoCard'
+import { Suspense, lazy } from 'react';
+
 
 const Projects: React.FC<IProjects> = () => {
+    const RepoCard = React.lazy(() => import('../components/RepoCard'));
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [repos, setRepos] = useState<IRepos[]>([])
@@ -18,6 +21,7 @@ const Projects: React.FC<IProjects> = () => {
                 let res = await fetch('/api/repos');
                 let repos = await res.json();
                 setRepos(repos)
+
             } catch (error) {
                 console.log(error)
             }
@@ -41,8 +45,12 @@ const Projects: React.FC<IProjects> = () => {
             <div className="container">
                 <div className="row justify-content-center display-4 my-5">{PathText}</div>
                 <div className="row justify-content-center">
+
                     {repos.map(repo => (
-                        <RepoCard key={repo.id} repo={repo} />
+                        <Suspense key={repo.id} fallback={<div>Loading...</div>}>
+                            <RepoCard key={repo.id} repo={repo} />
+
+                        </Suspense>
                     ))}
                 </div>
             </div>
