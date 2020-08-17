@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { GlobalStyles } from '../utils/global-style';
 import { urlRegex } from '../utils/url-regex';
 import { useEffect } from 'react';
 import { IRepos } from '../utils/interfaces';
 import RepoCard from '../components/RepoCard';
+import styled from 'styled-components';
 
 
 const repoByTag: React.FC<IrepoByTag> = (props) => {
@@ -40,16 +41,55 @@ const repoByTag: React.FC<IrepoByTag> = (props) => {
                     </title>
                 </Helmet>
             </GlobalStyles>
-            <div className="row justify-content-center display-4">{tag}</div>
-            <div className="row justify-content-center">
-                {repos.map(repo => (
-                    <RepoCard key={repo.id} repo={repo} />
-                ))}
+            <div className="container">
+                <Border className="mt-5">
+                    {tag}
+                </Border>
+                <BackButton>
+                    <Link to="/projects">
+                        <div className=" mb-5 btn btn-outline-secondary">BACK</div>
+                    </Link>
+                </BackButton>
+                <div className="row justify-content-center pl-md-5">
+                    {repos.map(repo => (
+                        <RepoCard key={repo.id} repo={repo} />
+                    ))}
+                </div>
             </div>
         </>
     )
 }
 
+const Border = styled.div`
+    border-top: 2px solid;
+    border-radius: 40px 0px 0px 40px;
+    padding-left: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+`;
+
+const BackButton = styled.div`
+    padding-left: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    
+`;
 
 export interface IrepoByTag {
 }

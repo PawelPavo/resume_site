@@ -12,7 +12,8 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
     const imageClick = () => {
         Swal.fire({
             imageUrl: props.repo.repo_image_url,
-            imageWidth: 400,
+            width: 600,
+            imageWidth: 600,
             imageHeight: 400,
             background: `
             rgba(47,54,64,0.7)
@@ -41,13 +42,13 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
             <div className="container mb-5">
                 <div className="row">
                     <div className="col-md-4 border border-left-0 border-right-0 border-top-0 mb-2">
-                        <h4>
+                        <h4 className="text-muted">
                             {props.repo.repo_name}
                         </h4>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-3 text-center">
+                    <div className="col-md-3 text-center mt-3">
                         <img
                             onClick={imageClick}
                             src={props.repo.repo_image_url}
@@ -60,7 +61,7 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
                 <div className="row justify-content-end mt-1 pr-md-3">
                     <div className="col-md-3 text-right ">
                         <RepoLink >
-                            <a className="pr-md-5" href={props.repo.repo_url}>View Source Code</a>
+                            <a className="pr-md-5" target="_blank" href={props.repo.repo_url}>View Source Code</a>
                         </RepoLink>
                     </div>
                 </div>

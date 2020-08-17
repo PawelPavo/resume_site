@@ -8,7 +8,7 @@ export const getPathText = (pathname: string): string => {
         case '/':
             return 'Welcome';
         case '/projects':
-            return 'My Projects';
+            return 'My Current Work';
         case '/contact':
             return 'Contact';
         case '/about':

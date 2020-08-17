@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { IRepos } from '../utils/interfaces'
 // import RepoCard from '../components/RepoCard'
 import { Suspense, lazy } from 'react';
+import styled from 'styled-components'
 
 
 const Projects: React.FC<IProjects> = () => {
@@ -43,8 +44,11 @@ const Projects: React.FC<IProjects> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-                <div className="row justify-content-center display-4 my-5">{PathText}</div>
-                <div className="row justify-content-center">
+
+                <Border className="my-5">
+                    {PathText}
+                </Border>
+                <div className="row justify-content-center pl-md-5">
 
                     {repos.map(repo => (
                         <Suspense key={repo.id} fallback={<div>Loading...</div>}>
@@ -58,6 +62,24 @@ const Projects: React.FC<IProjects> = () => {
         </>
     )
 }
+
+const Border = styled.div`
+    border-top: 2px solid;
+    border-radius: 40px 0px 0px 40px;
+    padding-left: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
+`;
+
+
 
 export interface IProjects { }
 export default Projects;
