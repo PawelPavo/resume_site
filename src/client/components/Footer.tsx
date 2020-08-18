@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FiMail} from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -7,15 +7,18 @@ const Footer: React.FC<IFooter> = () => {
 
     return (
         <>
-            <div className="row justify-content-center fixed-bottom pb-3">
+            <div className="row justify-content-center fixed-bottom pb-5">
                 <Icon>
-                    <a target="_blank" href="https://github.com/PawelPavo"><FaGithub /></a>
+                    <a target="_blank" href="https://github.com/PawelPavo?tab=repositories"><FaGithub /></a>
                 </Icon>
                 <Icon>
                     <a href=""><FaInstagram /></a>
                 </Icon>
                 <Icon>
                     <a href="/contact"><FiMail /></a>
+                </Icon>
+                <Icon>
+                    <a target="_blank" href="https://www.linkedin.com/in/pawel-jaskolski-995323b3/"><FaLinkedin /></a>
                 </Icon>
             </div>
         </>
