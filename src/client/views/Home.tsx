@@ -12,7 +12,7 @@ const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [checked, setChecked] = useState<boolean>()
-    const [hi, setHi] = useState<string>('Hello!')
+    const [hi, setHi] = useState<string>('llo!')
 
     useEffect(() => {
         (async () => {
@@ -53,7 +53,7 @@ const Home: React.FC<IHome> = (props) => {
                     <small className="text-monospace py-2 px-5 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer </small>
                 </div>
                 <LogoText>
-                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{hi}</div>
+                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5"><span className="">He</span>{hi}</div>
                 </LogoText>
                 <Footer />
             </div>

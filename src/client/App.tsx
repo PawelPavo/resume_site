@@ -23,7 +23,7 @@ const App: React.FC<IApp> = () => {
 	return (
 		<ThemeProvider theme={!checked ? lightTheme : darkTheme}>
 			<BrowserRouter>
-				<div className="row justify-content-center py-3">
+				<div className="row justify-content-center py-3 no-gutters">
 					<SwitchButton
 						offColor="#98b1c4"
 						onColor="#adb6c0"
