@@ -34,8 +34,8 @@ const Resume: React.FC<IResume> = () => {
                     </Link>
                 </BackButton>
                 <div className="row justify-content-center">
-                    <div className="col-8 mt-5" style={{ textAlign: "justify" }}>
-                        <p>Self-motivated Junior Full-Stack Developer with a demonstrated history of working in the digital marketing and advertising industry. Skilled in full-stack application development using ReactJS, JavaScript, TypeScript, NodeJS, Tailwind, CSS and more. Creative and dependable team player with a passion for new technologies and software innovation.</p>
+                    <div className="col mt-5 text-center">
+                        <h1>RESUME CONTENT GOES HERE</h1>
                     </div>
                 </div>
                 <Link to="https://news-api.s3.us-east-2.amazonaws.com/Pawel+SoftDev+Resume+August.pdf" target="_blank" download>Download Resume</Link>

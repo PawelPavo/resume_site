@@ -118,7 +118,5 @@ const Border = styled.div`
     text-transform: lowercase;
 `;
 
-export interface IContact {
-
-}
+export interface IContact {}
 export default Contact;

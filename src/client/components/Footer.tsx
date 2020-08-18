@@ -1,10 +1,23 @@
 import * as React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { FiMail} from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 import { AiOutlineProfile } from 'react-icons/ai'
 import styled from 'styled-components';
+import { useHistory, Link } from 'react-router-dom';
+
 
 const Footer: React.FC<IFooter> = () => {
+
+    let history = useHistory();
+
+    // handles re-routing to a resume
+    const handleClick = async (e: any) => {
+        try {
+            history.push(`/resume`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <>
@@ -16,14 +29,16 @@ const Footer: React.FC<IFooter> = () => {
                     <a href=""><FaInstagram /></a>
                 </Icon>
                 <Icon>
-                    <a href="/contact"><FiMail /></a>
+                    <a target="_blank" href="mailto:pjpavo@gmail.com"><FiMail /></a>
                 </Icon>
                 <Icon>
                     <a target="_blank" href="https://www.linkedin.com/in/pawel-jaskolski-995323b3/"><FaLinkedin /></a>
                 </Icon>
-                <Icon>
-                    <a href="/resume"><AiOutlineProfile /></a>
-                </Icon>
+                <Link to="/resume">
+                    <Icon>
+                        <a><AiOutlineProfile /></a>
+                    </Icon>
+                </Link>
             </div>
         </>
     )
