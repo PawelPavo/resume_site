@@ -60,7 +60,7 @@ const Contact: React.FC<IContact> = () => {
                     {PathText}
                 </Border>
                 <div className="row justify-content-center">
-                    <div className="col-md-8 border">
+                    <div className="col-md-8 border shadow">
                         <form className="form-group mt-5 p-3"
                             onSubmit={onSubmit}>
                             <input
@@ -69,7 +69,7 @@ const Contact: React.FC<IContact> = () => {
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                                style={{ opacity: 0.5 }}
+                                style={{ opacity: 0.7 }}
                             />
                             <input
                                 type="text"
@@ -77,7 +77,7 @@ const Contact: React.FC<IContact> = () => {
                                 placeholder="Subject"
                                 value={subject}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)}
-                                style={{ opacity: 0.5 }}
+                                style={{ opacity: 0.7 }}
                             />
                             <input
                                 type="text"
@@ -85,7 +85,7 @@ const Contact: React.FC<IContact> = () => {
                                 placeholder="Content"
                                 value={content}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setContent(e.target.value)}
-                                style={{ opacity: 0.5 }}
+                                style={{ opacity: 0.7 }}
                             />
                             <div className="row justify-content-center">
                                 <button

@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { urlRegex } from '../utils/url-regex';
 import styled from 'styled-components';
 import Swal from 'sweetalert2'
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
+const Fade = require('react-reveal/Fade')
 
 const RepoCard: React.FC<IRepoCard> = (props) => {
     const history = useHistory()

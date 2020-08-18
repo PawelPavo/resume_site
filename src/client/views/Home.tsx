@@ -78,7 +78,7 @@ const Home: React.FC<IHome> = (props) => {
                     </CurrentProjects>
                 </div> */}
                 <LogoText>
-                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{hi}</div>
+                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{!checked ? `${hi}` : `${'Boo!'}`}</div>
                 </LogoText>
                 <Footer />
             </div>
