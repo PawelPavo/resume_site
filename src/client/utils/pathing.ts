@@ -15,5 +15,7 @@ export const getPathText = (pathname: string): string => {
             return 'Bio';
         case '/tag':
             return 'Results By Tag';
+        case '/resume':
+            return 'My Resume';
     }
 }

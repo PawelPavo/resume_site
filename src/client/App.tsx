@@ -10,6 +10,7 @@ import NavigationBar from './components/Navigation';
 import Bio from './views/Bio';
 import RepoByTag from './views/RepoByTag';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import Resume from './views/Resume';
 
 const App: React.FC<IApp> = () => {
 
@@ -23,7 +24,7 @@ const App: React.FC<IApp> = () => {
 	}
 
 	return (
-		<ThemeProvider theme={!checked ? lightTheme : darkTheme}>
+		<ThemeProvider theme={!checked ? lightTheme : darkTheme} >
 			<BrowserRouter>
 				<div className="row justify-content-center py-3 no-gutters">
 					<SwitchButton
@@ -78,6 +79,9 @@ const App: React.FC<IApp> = () => {
 					</Route>
 					<Route exact path="/contact">
 						<Contact />
+					</Route>
+					<Route exact path="/resume">
+						<Resume />
 					</Route>
 					<Route exact path="/:tag">
 						<RepoByTag />

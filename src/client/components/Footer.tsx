@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FiMail} from 'react-icons/fi';
+import { AiOutlineProfile } from 'react-icons/ai'
 import styled from 'styled-components';
 
 const Footer: React.FC<IFooter> = () => {
@@ -19,6 +20,9 @@ const Footer: React.FC<IFooter> = () => {
                 </Icon>
                 <Icon>
                     <a target="_blank" href="https://www.linkedin.com/in/pawel-jaskolski-995323b3/"><FaLinkedin /></a>
+                </Icon>
+                <Icon>
+                    <a href="/resume"><AiOutlineProfile /></a>
                 </Icon>
             </div>
         </>
