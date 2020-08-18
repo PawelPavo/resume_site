@@ -4,33 +4,20 @@ import { getPathText } from '../utils/pathing'
 import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
+import { IRepos } from '../utils/interfaces'
+import RepoCard from '../components/RepoCard'
 
-// const inclusiveRange = (start, end, step) => {
-//     return Array.from(Array.from(Array(Math.ceil((end - start + 1) / step)).keys()), x => start + x * step);
-// }
 
-// let a = (inclusiveRange(1, 10, 1))
-// let b = (inclusiveRange(11, 20, 1))
-// console.log('Original Array')
-// console.log(a)
-// console.log(b)
 
-// const array = (num, x, y) => {
-//     let c = []
-//     for (let i = 0; i < num; i++) {
-//         (c.push(x[0]++, y[0]++))
-//     }
-//     console.log('Shuffle ' + 1)
-//     console.log(c)
-//     console.log(c.splice(0, 10))
-//     console.log(c.splice(0, num * 2))
-// }
-// array(10, b, a)
+
 
 const AboutMe: React.FC<IAboutMe> = () => {
 
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
+
+
 
     return (
         <>
@@ -58,14 +45,15 @@ const AboutMe: React.FC<IAboutMe> = () => {
                         <p>Self-motivated Junior Full-Stack Developer with a demonstrated history of working in the digital marketing and advertising industry. Skilled in full-stack application development using ReactJS, JavaScript, TypeScript, NodeJS, Tailwind, CSS and more. Creative and dependable team player with a passion for new technologies and software innovation.</p>
                     </div>
                 </div>
-
+                <div>
+                </div>
             </div>
         </>
     )
 }
 
 const Border = styled.div`
-    border-top: 2px solid;
+    border-top: 1px solid;
     border-radius: 40px 0px 0px 40px;
     padding-left: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -79,6 +67,7 @@ const Border = styled.div`
     font-variant: small-caps;
     text-transform: lowercase;
 `;
+
 
 
 export interface IAboutMe {

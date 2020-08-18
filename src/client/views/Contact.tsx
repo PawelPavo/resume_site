@@ -36,7 +36,7 @@ const Contact: React.FC<IContact> = () => {
 }
 
 const Border = styled.div`
-    border-top: 2px solid;
+    border-top: 1px solid;
     border-radius: 40px 0px 0px 40px;
     padding-left: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

@@ -5,13 +5,11 @@ import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import { useState, useEffect } from 'react'
 import { IRepos } from '../utils/interfaces'
-// import RepoCard from '../components/RepoCard'
-import { Suspense, lazy } from 'react';
+import RepoCard from '../components/RepoCard'
 import styled from 'styled-components'
 
 
 const Projects: React.FC<IProjects> = () => {
-    const RepoCard = React.lazy(() => import('../components/RepoCard'));
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [repos, setRepos] = useState<IRepos[]>([])
@@ -49,12 +47,9 @@ const Projects: React.FC<IProjects> = () => {
                     {PathText}
                 </Border>
                 <div className="row justify-content-center pl-md-5">
-
                     {repos.map(repo => (
-                        <Suspense key={repo.id} fallback={<div>Loading...</div>}>
                             <RepoCard key={repo.id} repo={repo} />
 
-                        </Suspense>
                     ))}
                 </div>
             </div>
@@ -64,7 +59,7 @@ const Projects: React.FC<IProjects> = () => {
 }
 
 const Border = styled.div`
-    border-top: 2px solid;
+    border-top: 1px solid;
     border-radius: 40px 0px 0px 40px;
     padding-left: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

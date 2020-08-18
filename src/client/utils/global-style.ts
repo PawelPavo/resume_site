@@ -8,5 +8,6 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.text};
         min-height: 100vh;
         transition: 0.2s linear;
+        font-family: "Courier New", Courier, monospace;
     }
 `;
