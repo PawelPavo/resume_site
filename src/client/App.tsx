@@ -25,8 +25,8 @@ const App: React.FC<IApp> = () => {
 			<BrowserRouter>
 				<div className="row justify-content-center py-3">
 					<SwitchButton
-						offColor="#2f3640"
-						onColor="#cdd6e0"
+						offColor="#98b1c4"
+						onColor="#adb6c0"
 						uncheckedIcon={
 							<div
 								style={{
@@ -35,7 +35,7 @@ const App: React.FC<IApp> = () => {
 									alignItems: "center",
 									height: "100%",
 									fontSize: 15,
-									color: "#FFA500",
+									color: "#FFFFFF",
 									paddingRight: 2,
 								}}
 							>
@@ -50,7 +50,7 @@ const App: React.FC<IApp> = () => {
 									alignItems: "center",
 									height: "100%",
 									fontSize: 15,
-									color: "#FFA500",
+									color: "#FFFFFF",
 									paddingRight: 2
 								}}
 							>

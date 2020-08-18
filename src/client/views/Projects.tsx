@@ -42,7 +42,6 @@ const Projects: React.FC<IProjects> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-
                 <Border className="my-5">
                     {PathText}
                 </Border>
