@@ -4,20 +4,11 @@ import { getPathText } from '../utils/pathing'
 import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import styled from 'styled-components'
-import { useState, useEffect } from 'react'
-import { IRepos } from '../utils/interfaces'
-import RepoCard from '../components/RepoCard'
-
-
-
-
 
 const AboutMe: React.FC<IAboutMe> = () => {
 
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
-
-
 
     return (
         <>
@@ -34,12 +25,9 @@ const AboutMe: React.FC<IAboutMe> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-
-
                 <Border className="mb-5">
                     {PathText}
                 </Border>
-
                 <div className="row justify-content-center">
                     <div className="col-8 mt-5" style={{ textAlign: "justify" }}>
                         <p>Self-motivated Junior Full-Stack Developer with a demonstrated history of working in the digital marketing and advertising industry. Skilled in full-stack application development using ReactJS, JavaScript, TypeScript, NodeJS, Tailwind, CSS and more. Creative and dependable team player with a passion for new technologies and software innovation.</p>

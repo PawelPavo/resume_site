@@ -6,11 +6,13 @@ import styled from 'styled-components';
 import Swal from 'sweetalert2'
 // import Fade from 'react-reveal/Fade';
 
+// if its import, it throws types error - could not find declaration file.
 const Fade = require('react-reveal/Fade')
 
 const RepoCard: React.FC<IRepoCard> = (props) => {
     const history = useHistory()
 
+    // SweetAlert2 enalges the image on click/ not mobile friendly - need a better solution
     const imageClick = () => {
         Swal.fire({
             imageUrl: props.repo.repo_image_url,
@@ -31,6 +33,7 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
         })
     }
 
+    // handles re-routing to a page with the list of repos whith clicked tag
     const handleClick = async (e: any) => {
         try {
             history.push(`/${urlRegex(e.target.innerHTML)}`)

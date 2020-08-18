@@ -15,6 +15,7 @@ const repoByTag: React.FC<IrepoByTag> = (props) => {
 
     const [repos, setRepos] = React.useState<IRepos[]>([])
 
+    //Gets all the repos with a tag chosen by user
     useEffect(() => {
         (async () => {
             try {

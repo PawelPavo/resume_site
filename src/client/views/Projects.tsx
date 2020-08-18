@@ -14,6 +14,7 @@ const Projects: React.FC<IProjects> = () => {
     const PathText = getPathText(pathname)
     const [repos, setRepos] = useState<IRepos[]>([])
 
+    // Gets all the repos from the db
     useEffect(() => {
         (async () => {
             try {

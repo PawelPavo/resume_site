@@ -17,6 +17,7 @@ const Contact: React.FC<IContact> = () => {
     const [subject, setSubject] = React.useState<string>('')
     const [content, setContent] = React.useState<string>('')
 
+    // Submits emails through MailGun via backened API call to the mailgun service
     const onSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -55,7 +56,6 @@ const Contact: React.FC<IContact> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-
                 <Border className="mb-5">
                     {PathText}
                 </Border>

@@ -16,6 +16,8 @@ const App: React.FC<IApp> = () => {
 
 	const [checked, setChecked] = React.useState<boolean>(false)
 
+
+	//Sets the theme of the site on toggle
 	const handleTheme = async (checked: any) => {
 		setChecked(checked)
 	}
