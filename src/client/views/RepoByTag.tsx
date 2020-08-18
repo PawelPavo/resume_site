@@ -42,7 +42,7 @@ const repoByTag: React.FC<IrepoByTag> = (props) => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-                <Border className="mt-5">
+                <Border className="">
                     {tag}
                 </Border>
                 <BackButton>
@@ -61,7 +61,7 @@ const repoByTag: React.FC<IrepoByTag> = (props) => {
 }
 
 const Border = styled.div`
-    border-top: 2px solid;
+    border-top: 1px solid;
     border-radius: 40px 0px 0px 40px;
     padding-left: 15px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

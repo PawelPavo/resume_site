@@ -41,7 +41,7 @@ const Projects: React.FC<IProjects> = () => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-                <Border className="my-5">
+                <Border className="mb-5">
                     {PathText}
                 </Border>
                 <div className="row justify-content-center pl-md-5">

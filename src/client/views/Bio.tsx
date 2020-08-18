@@ -36,7 +36,7 @@ const AboutMe: React.FC<IAboutMe> = () => {
             <div className="container">
 
 
-                <Border className="my-5">
+                <Border className="mb-5">
                     {PathText}
                 </Border>
 

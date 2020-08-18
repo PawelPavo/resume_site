@@ -1,37 +1,45 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const NavigationDark: React.FC<INavigationDark> = () => {
     return (
         <>
-            <div className="">
+            <div className="container">
+                <NavigationStyle>
+                    <div className="row py-3 text-center" >
+                        <NavLink
+                            className="col text-decoration-none"
+                            exact to="/"
+                            activeClassName="border border-top-0 border-bottom-0 text-monospace"
+                        >Home</NavLink>
+                        <NavLink
+                            className="col text-decoration-none"
+                            exact to="/about"
+                            activeClassName="border border-top-0 border-bottom-0 text-monospace"
+                        >Bio</NavLink>
+                        <NavLink
+                            className="col text-decoration-none"
+                            exact to="/projects"
+                            activeClassName="border border-top-0 border-bottom-0 text-monospace"
+                        >Projects</NavLink>
+                        <NavLink
+                            className="col text-decoration-none"
+                            exact to="/contact"
+                            activeClassName="border border-top-0 border-bottom-0 text-monospace"
+                        >Contact</NavLink>
+                    </div>
+                </NavigationStyle>
 
-                <div className="row shadow p-3 border text-center" >
-                    <NavLink
-                        className="col text-decoration-none nav-bar-text "
-                        exact to="/"
-                        activeClassName="nav-bar-active"
-                    >Home</NavLink>
-                    <NavLink
-                        className="col text-decoration-none nav-bar-text "
-                        exact to="/about"
-                        activeClassName="nav-bar-active"
-                    >Bio</NavLink>
-                    <NavLink
-                        className="col text-decoration-none nav-bar-text "
-                        exact to="/projects"
-                        activeClassName="nav-bar-active"
-                    >Projects</NavLink>
-                    <NavLink
-                        className="col text-decoration-none nav-bar-text "
-                        exact to="/contact"
-                        activeClassName="nav-bar-active"
-                    >Contact</NavLink>
-                </div>
             </div>
         </>
     )
 }
+
+const NavigationStyle = styled.div`
+    color: red;
+    font-family: monospace;
+`;
 
 export interface INavigationDark { }
 export default NavigationDark;

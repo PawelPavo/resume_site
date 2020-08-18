@@ -55,6 +55,9 @@ const Home: React.FC<IHome> = (props) => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
+                <Border className="mb-5">
+                    {PathText}
+                </Border>
                 <Logo>
                     <div className="border border-left-0 border-right-0 border-bottom-0 p-5">
                         <img
@@ -104,6 +107,22 @@ const LogoText = styled.div`
 const CurrentProjects = styled.div`
     opacity: 0.75;
     font-size: 10px;
+`;
+
+const Border = styled.div`
+    border-top: 1px solid;
+    border-radius: 40px 0px 0px 40px;
+    padding-left: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: lowercase;
 `;
 
 export interface IHome {

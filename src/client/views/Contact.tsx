@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import { getPathText } from '../utils/pathing'
 import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
@@ -10,6 +10,35 @@ const Contact: React.FC<IContact> = () => {
 
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
+
+    let history = useHistory();
+
+    const [email, setEmail] = React.useState<string>('')
+    const [subject, setSubject] = React.useState<string>('')
+    const [content, setContent] = React.useState<string>('')
+
+    const onSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    subject,
+                    content
+                }),
+            })
+            setEmail(''),
+                setSubject(''),
+                setContent('')
+            history.push('/');
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <>
@@ -27,9 +56,47 @@ const Contact: React.FC<IContact> = () => {
             </GlobalStyles>
             <div className="container">
 
-                <Border className="my-5">
+                <Border className="mb-5">
                     {PathText}
                 </Border>
+                <div className="row justify-content-center">
+                    <div className="col-md-8 border">
+                        <form className="form-group mt-5 p-3"
+                            onSubmit={onSubmit}>
+                            <input
+                                type="email"
+                                className="input-group mb-1 mt-3 p-1 border border-right-0 border-left-0 border-top-0 w-75 mx-auto "
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                                style={{ opacity: 0.5 }}
+                            />
+                            <input
+                                type="text"
+                                className="input-group my-1 p-1 border border-top-0 border-left-0 border-right-0 my-5 w-75 mx-auto"
+                                placeholder="Subject"
+                                value={subject}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)}
+                                style={{ opacity: 0.5 }}
+                            />
+                            <input
+                                type="text"
+                                className="input-group my-1 p-1 border border-top-0 border-left-0 border-right-0 my-5 w-75 mx-auto"
+                                placeholder="Content"
+                                value={content}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setContent(e.target.value)}
+                                style={{ opacity: 0.5 }}
+                            />
+                            <div className="row justify-content-center">
+                                <button
+                                    style={{ opacity: 0.5 }}
+                                    className="btn btn-block btn-outline-secondary mt-2 shoadow w-50">
+                                    Email Me!</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </>
     )
