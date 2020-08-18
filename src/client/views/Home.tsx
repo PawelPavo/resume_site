@@ -12,8 +12,23 @@ const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [checked, setChecked] = useState<boolean>()
-    const [hi, setHi] = useState<string>('llo!')
+    const [hi, setHi] = useState<string>('Hello!')
+    const [repoCount, setRepoCount] = useState<number>(0)
 
+    //Gets the count of repos from the db
+    useEffect(() => {
+        (async () => {
+            try {
+                let res = await fetch('/api/repos/count')
+                let repoCount = await res.json();
+                setRepoCount(repoCount.count)
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, [])
+
+    // runs a check on which theme is curently active
     useEffect(() => {
         (async () => {
             try {
@@ -23,6 +38,7 @@ const Home: React.FC<IHome> = (props) => {
             }
         })();
     }, [event]);
+
 
     return (
         <>
@@ -47,13 +63,19 @@ const Home: React.FC<IHome> = (props) => {
                             style={{ width: "100px", height: "auto " }}
                             alt="Pawel Eyes Open">
                         </img>
+
                     </div>
                 </Logo>
                 <div className="row justify-content-center">
-                    <small className="text-monospace py-2 px-5 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer </small>
+                    <small className="text-monospace py-2 px-5 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer</small>
                 </div>
+                {/* <div className="row justify-content-center mt-1">
+                    <CurrentProjects>
+                        <div className="text-monospace" >Current Projects: {repoCount}</div>
+                    </CurrentProjects>
+                </div> */}
                 <LogoText>
-                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5"><span className="">He</span>{hi}</div>
+                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{hi}</div>
                 </LogoText>
                 <Footer />
             </div>
@@ -77,6 +99,11 @@ const LogoText = styled.div`
     justify-content: center;
     align-items: center;
     opacity: 0.8;
+`;
+
+const CurrentProjects = styled.div`
+    opacity: 0.75;
+    font-size: 10px;
 `;
 
 export interface IHome {

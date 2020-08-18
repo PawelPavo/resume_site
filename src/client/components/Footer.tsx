@@ -15,7 +15,7 @@ const Footer: React.FC<IFooter> = () => {
                     <a href=""><FaInstagram /></a>
                 </Icon>
                 <Icon>
-                    <a href=""><FiMail /></a>
+                    <a href="/contact"><FiMail /></a>
                 </Icon>
             </div>
         </>

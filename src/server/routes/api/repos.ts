@@ -3,6 +3,17 @@ import db from '../../db';
 
 const router = express.Router();
 
+
+//GET api/count
+router.get('/count', async(req,res) => {
+    try {
+        const [count] = await db.repos.count();
+        res.json(count);
+    } catch (error) {
+        console.log(error)
+    }
+});
+
 //GET api/repos/:tag
 router.get('/:tag', async(req,res) => {
     const {tag} = req.params
@@ -24,5 +35,7 @@ router.get('/', async(req,res) => {
         console.log(error)
     }
 });
+
+
 
 export default router;
