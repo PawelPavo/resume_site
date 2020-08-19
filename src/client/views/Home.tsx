@@ -12,7 +12,6 @@ const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [checked, setChecked] = useState<boolean>()
-    const [hi, setHi] = useState<string>('Hello!')
     const [repoCount, setRepoCount] = useState<number>(0)
 
     //Gets the count of repos from the db
@@ -55,6 +54,9 @@ const Home: React.FC<IHome> = (props) => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="number_of_projects" >{repoCount}</div>
+                    </div>
                 <Border className="mb-5">
                     {PathText}
                 </Border>
@@ -72,13 +74,10 @@ const Home: React.FC<IHome> = (props) => {
                 <div className="row justify-content-center">
                     <small className="text-monospace py-2 px-5 border border-left-0 border-right-0" >Pawel Jaskolski - Software Developer</small>
                 </div>
-                {/* <div className="row justify-content-center mt-1">
-                    <CurrentProjects>
-                        <div className="text-monospace" >Current Projects: {repoCount}</div>
-                    </CurrentProjects>
-                </div> */}
+                <div className="row justify-content-center mt-1">
+                </div>
                 <LogoText>
-                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{!checked ? `${hi}` : `${'Boo!'}`}</div>
+                    <div className="text-monospace border border-left-0 border-right-0 border-left-0 border-top-0 py-5">{!checked ? `${'Hello...'}` : `${'Boo!'}`}</div>
                 </LogoText>
                 <Footer />
             </div>
@@ -102,11 +101,6 @@ const LogoText = styled.div`
     justify-content: center;
     align-items: center;
     opacity: 0.8;
-`;
-
-const CurrentProjects = styled.div`
-    opacity: 0.75;
-    font-size: 10px;
 `;
 
 const Border = styled.div`

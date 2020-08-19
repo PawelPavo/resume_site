@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { AiOutlineProfile } from 'react-icons/ai'
 import styled from 'styled-components';
@@ -24,9 +24,6 @@ const Footer: React.FC<IFooter> = () => {
             <div className="row justify-content-center fixed-bottom pb-5">
                 <Icon>
                     <a target="_blank" href="https://github.com/PawelPavo?tab=repositories"><FaGithub /></a>
-                </Icon>
-                <Icon>
-                    <a href=""><FaInstagram /></a>
                 </Icon>
                 <Icon>
                     <a target="_blank" href="mailto:pjpavo@gmail.com"><FiMail /></a>

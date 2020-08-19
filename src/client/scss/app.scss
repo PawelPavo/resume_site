@@ -18,4 +18,20 @@ $theme-colors: (
     animation: colorchange 2.5s;
   }
 
+  .number_of_projects {
+    position: absolute;
+    z-index: -1;
+    font-size: 500px;
+    opacity: 0.04;
+  }
+
+  @media screen and (max-width: 480px) {
+    .number_of_projects {
+        position: absolute;
+        z-index: -1;
+        font-size: 400px;
+        opacity: 0.04;
+      }
+}
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

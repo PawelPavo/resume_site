@@ -9,6 +9,7 @@ import { GoTriangleRight } from 'react-icons/go';
 
 let languageArray = ["JavaScript", "TypeScript", "Node.js", "React.js", "Tailwind", "MySQL", "jQuery", "JSON", "Express", "React-Native", "Bootstrap", "Git", "HTML", "CSS", "...and more"]
 
+//splits the languageArray into 2 equal pars and created 2 new arrays for mapping in 2 diffrent columns
 const half = Math.ceil(languageArray.length / 2);
 const firstHalf = languageArray.splice(0, half)
 const secondHalf = languageArray.splice(-half)
@@ -19,6 +20,7 @@ const Resume: React.FC<IResume> = () => {
     const PathText = getPathText(pathname)
     const [show, setShow] = useState<boolean>(false)
 
+    //function which creatse a bacjground effect when you click "Download Resume"
     function play() {
         document.querySelector(".box").className = "box";
         window.requestAnimationFrame(function (time) {
@@ -28,9 +30,12 @@ const Resume: React.FC<IResume> = () => {
         });
     }
 
+    // Chanages state of show (job experiance) to true
     const handlePlawireClick = () => {
         setShow(true)
     }
+
+    //changes state of show (job experiance) to false
     const handleStangerClick = () => {
         setShow(false)
     }
@@ -96,6 +101,7 @@ const Resume: React.FC<IResume> = () => {
                             <div className="col-md-10 mt-5 mb-5">
                                 {show ?
                                     <div>
+                                        <h4 className="text-center">Playwire</h4>
                                         <h6>Client Relations Executive</h6>
                                         <p>DeerfieldBeac​h, FL</p>
                                         <small><GoTriangleRight />Assisted key publishers with questions and concerns regarding their accounts</small>
@@ -117,6 +123,7 @@ const Resume: React.FC<IResume> = () => {
                                     </div>
                                     :
                                     <div>
+                                        <h4 className="text-center">Stanger Injury Treatment Centers</h4>
                                         <h6>Operations Manager </h6>
                                         <p>Delray Beach, FL</p>
                                         <small><GoTriangleRight />Established the company’s technical vision and major aspects of the company’s technological development</small>
@@ -130,26 +137,24 @@ const Resume: React.FC<IResume> = () => {
                                 }
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-3 ml-2">
                             <div className="text-primary font-weight-bold">
                                 EDUCATION
-                                <div className="font-weight-bold text-muted">
-                                    <div>
-                                        Covalence Coding Bootcamp
-                                    </div>
-                                    <small>
-                                        Covalence's Anti-degree certificate, Computer Software Developer 2019 - 2020
-                                    </small>
                                 </div>
-                                <div className="font-weight-bold text-muted mt-2">
-                                    <div>
-                                        Florida Atlantic University
-                                    </div>
-                                    <small>
-                                        Bachelor's Degree, Health/Health Care Administration/Management Graduated 2017
-                                    </small>
-                                </div>
+                            <div className="font-weight-bold text-muted">
+                                
+                                    Covalence Coding Bootcamp
+                                
                             </div>
+                            <small>
+                                Covalence's Anti-degree certificate, Computer Software Developer 2019 - 2020
+                                    </small>
+                            <div className="font-weight-bold text-muted mt-2">
+                                    Florida Atlantic University
+                            </div>
+                                <small>
+                                    Bachelor's Degree, Health/Health Care Administration/Management Graduated 2017
+                                </small>
                             <div className="text-primary font-weight-bold mt-3">
                                 TECHNICAL SKILLS
                             </div>
@@ -157,7 +162,8 @@ const Resume: React.FC<IResume> = () => {
                                 <div className="col-5">
                                     <div>
                                         {firstHalf.map(language => (
-                                            <div>
+                                            
+                                            <div key={language}>
                                                 <small>
                                                     {language}
                                                 </small>
@@ -168,7 +174,7 @@ const Resume: React.FC<IResume> = () => {
                                 <div className="col-5">
                                     <div>
                                         {secondHalf.map(language => (
-                                            <div>
+                                            <div key={language}>
                                                 <small>
                                                     {language}
                                                 </small>
