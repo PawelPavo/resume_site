@@ -36,7 +36,7 @@ const Footer: React.FC<IFooter> = () => {
                 </Icon>
                 <Link to="/resume">
                     <Icon>
-                        <a><AiOutlineProfile /></a>
+                        <span><AiOutlineProfile /></span>
                     </Icon>
                 </Link>
             </div>

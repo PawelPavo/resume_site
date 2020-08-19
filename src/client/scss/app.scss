@@ -2,5 +2,20 @@ $theme-colors: (
     'primary':#98B1C4//Covalence Blue!  :D
 );
 
+@keyframes colorchange {
+    0% { background: #2f3640}
+    100% { background: #768999 }
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 25px;
+  }
+  
+  .changing {
+    animation: colorchange 2.5s;
+  }
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
