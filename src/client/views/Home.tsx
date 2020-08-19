@@ -12,20 +12,6 @@ const Home: React.FC<IHome> = (props) => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [checked, setChecked] = useState<boolean>()
-    const [repoCount, setRepoCount] = useState<number>(0)
-
-    //Gets the count of repos from the db
-    useEffect(() => {
-        (async () => {
-            try {
-                let res = await fetch('/api/repos/count')
-                let repoCount = await res.json();
-                setRepoCount(repoCount.count)
-            } catch (error) {
-                console.log(error);
-            }
-        })();
-    }, [])
 
     // runs a check on which theme is curently active
     useEffect(() => {
@@ -54,9 +40,6 @@ const Home: React.FC<IHome> = (props) => {
                 </Helmet>
             </GlobalStyles>
             <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="number_of_projects" >{repoCount}</div>
-                    </div>
                 <Border className="mb-5">
                     {PathText}
                 </Border>

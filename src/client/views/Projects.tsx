@@ -13,6 +13,20 @@ const Projects: React.FC<IProjects> = () => {
     const { pathname } = useLocation()
     const PathText = getPathText(pathname)
     const [repos, setRepos] = useState<IRepos[]>([])
+    const [repoCount, setRepoCount] = useState<number>(0)
+
+    //Gets the count of repos from the db
+    useEffect(() => {
+        (async () => {
+            try {
+                let res = await fetch('/api/repos/count')
+                let repoCount = await res.json();
+                setRepoCount(repoCount.count)
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, [])
 
     // Gets all the repos from the db
     useEffect(() => {
@@ -45,6 +59,9 @@ const Projects: React.FC<IProjects> = () => {
                 <Border className="mb-5">
                     {PathText}
                 </Border>
+                <div className="row justify-content-center sticky-top">
+                        <div className="number_of_projects" >{repoCount}</div>
+                    </div>
                 <div className="row justify-content-center pl-md-5">
                     {repos.map(repo => (
                             <RepoCard key={repo.id} repo={repo} />
