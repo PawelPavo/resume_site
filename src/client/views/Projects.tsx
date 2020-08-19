@@ -52,24 +52,20 @@ const Projects: React.FC<IProjects> = () => {
                 <Helmet >
                     <title>
                         {PathText}
+
                     </title>
                 </Helmet>
             </GlobalStyles>
             <div className="container">
                 <Border className="mb-5">
-                    {PathText}
+                    {PathText} - {repoCount}
                 </Border>
-                <div className="row justify-content-center sticky-top">
-                        <div className="number_of_projects" >{repoCount}</div>
-                    </div>
                 <div className="row justify-content-center pl-md-5">
                     {repos.map(repo => (
-                            <RepoCard key={repo.id} repo={repo} />
-
+                        <RepoCard key={repo.id} repo={repo} />
                     ))}
                 </div>
             </div>
-
         </>
     )
 }

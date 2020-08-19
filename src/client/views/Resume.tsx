@@ -66,13 +66,12 @@ const Resume: React.FC<IResume> = () => {
                 <div className="row justify-content-center">
                     <div className="row justify-content-center">
                         <div >
-                            <Link
+                            <a
                                 className="box" onClick={play}
-                                to="https://news-api.s3.us-east-2.amazonaws.com/Pawel+SoftDev+Resume+August.pdf"
-                                target="_blank" download>
+                                href="https://news-api.s3.us-east-2.amazonaws.com/Pawel+SoftDev+Resume+August.pdf"
+                                target="_blank">
                                 Download Resume
-
-                        </Link>
+                        </a>
                         </div>
                     </div>
                     <div className="col-md-12 mt-3 border border-left-0 border-right-0 border-top-0 text-center">
@@ -104,35 +103,49 @@ const Resume: React.FC<IResume> = () => {
                                         <h4 className="text-center">Playwire</h4>
                                         <h6>Client Relations Executive</h6>
                                         <p>DeerfieldBeac​h, FL</p>
-                                        <small><GoTriangleRight />Assisted key publishers with questions and concerns regarding their accounts</small>
-                                        <br />
-                                        <small><GoTriangleRight />Created and maintained new partnership accounts in the internal client
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Assisted key publishers with questions and concerns regarding their accounts</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Created and maintained new partnership accounts in the internal client
                                             interface system which included advertising HTML tag creation, assigning correct advertising target audience, allocating the client to the proper advertising campaign schedule as well as assessing the tier of advertising partnership with the company</small>
-                                        <br />
-                                        <small><GoTriangleRight />Reviewed HTML for proper processing and implementation of JSON files , placement of JS Scripts, sizing of advertising banners and takeovers for optimal element placements to maximize revenue</small>
-                                        <br />
-                                        <small><GoTriangleRight />Collected and analyzed data such as hit rates, impressions per pageview, publisher revenue share, percentage increase or decrease time</small>
-                                        <br />
-                                        <small><GoTriangleRight />Collaborated with the Creative and Director of Ad Ops team in the creation and approval process of custom executions</small>
-                                        <br />
-                                        <small><GoTriangleRight />Responded to any type of support tickets that come through the publisher interface</small>
-                                        <br />
-                                        <small><GoTriangleRight />Conducted outreach for more inventory from publisher network partners when demand is high</small>
-                                        <br />
-                                        <small><GoTriangleRight />Kept up to date on all new products and process management releases relevant to publisher onboarding and maintenance</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Reviewed HTML for proper processing and implementation of JSON files , placement of JS Scripts, sizing of advertising banners and takeovers for optimal element placements to maximize revenue</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Collected and analyzed data such as hit rates, impressions per pageview, publisher revenue share, percentage increase or decrease time</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Collaborated with the Creative and Director of Ad Ops team in the creation and approval process of custom executions</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Responded to any type of support tickets that come through the publisher interface</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Conducted outreach for more inventory from publisher network partners when demand is high</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Kept up to date on all new products and process management releases relevant to publisher onboarding and maintenance</small>
+                                        </p>
                                     </div>
                                     :
                                     <div>
                                         <h4 className="text-center">Stanger Injury Treatment Centers</h4>
                                         <h6>Operations Manager </h6>
                                         <p>Delray Beach, FL</p>
-                                        <small><GoTriangleRight />Established the company’s technical vision and major aspects of the company’s technological development</small>
-                                        <br />
-                                        <small><GoTriangleRight />Charted and shaped the company’s strategic direction, development, and future growth</small>
-                                        <br />
-                                        <small><GoTriangleRight />Provided support to department heads in a fashion that embraced the company’s culture, mission and values</small>
-                                        <br />
-                                        <small><GoTriangleRight />Conducted research on leading-edge technologies and made determinations on the probability of implementation</small>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Established the company’s technical vision and major aspects of the company’s technological development</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Charted and shaped the company’s strategic direction, development, and future growth</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Provided support to department heads in a fashion that embraced the company’s culture, mission and values</small>
+                                        </p>
+                                        <p>
+                                            <small className="text-muted"><GoTriangleRight />Conducted research on leading-edge technologies and made determinations on the probability of implementation</small>
+                                        </p>
                                     </div>
                                 }
                             </div>
@@ -161,9 +174,9 @@ const Resume: React.FC<IResume> = () => {
                             <div className="row">
                                 <div className="col-5">
                                     <div>
-                                        {firstHalf.map(language => (
+                                        {firstHalf.map((language, i) => (
                                             
-                                            <div key={language}>
+                                            <div key={i}>
                                                 <small>
                                                     {language}
                                                 </small>
