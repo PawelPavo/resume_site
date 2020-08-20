@@ -68,7 +68,7 @@ const Resume: React.FC<IResume> = () => {
                         <div >
                             <a
                                 className="box" onClick={play}
-                                href="https://news-api.s3.us-east-2.amazonaws.com/Pawel+SoftDev+Resume+August.pdf"
+                                href="https://news-api.s3.us-east-2.amazonaws.com/Pawel+SoftDev+Resume+August+20+AWS.pdf"
                                 target="_blank">
                                 Download Resume
                         </a>
@@ -155,9 +155,7 @@ const Resume: React.FC<IResume> = () => {
                                 EDUCATION
                                 </div>
                             <div className="font-weight-bold text-muted">
-                                
-                                    Covalence Coding Bootcamp
-                                
+                                    Covalence Code Academy
                             </div>
                             <small>
                                 Covalence's Anti-degree certificate, Computer Software Developer 2019 - 2020

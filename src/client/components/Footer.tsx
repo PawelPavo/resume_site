@@ -21,7 +21,7 @@ const Footer: React.FC<IFooter> = () => {
 
     return (
         <>
-            <div className="row justify-content-center fixed-bottom pb-5">
+            <div className="row justify-content-center fixed-bottom pb-3">
                 <Icon>
                     <a target="_blank" href="https://github.com/PawelPavo?tab=repositories"><FaGithub /></a>
                 </Icon>

@@ -48,7 +48,7 @@ const Home: React.FC<IHome> = (props) => {
                         <img
                             src={!checked ? `${"https://news-api.s3.us-east-2.amazonaws.com/MeEyesOpen2.png"}` : `${"https://news-api.s3.us-east-2.amazonaws.com/MeEyesClosed2.png"}`}
                             className=""
-                            style={{ width: "100px", height: "auto " }}
+                            style={{ width: "160px", height: "auto " }}
                             alt="Pawel Eyes Open">
                         </img>
 
