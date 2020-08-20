@@ -4,6 +4,7 @@ import { getPathText } from '../utils/pathing'
 import { Helmet } from 'react-helmet'
 import { GlobalStyles } from '../utils/global-style'
 import styled from 'styled-components'
+import Footer from '../components/Footer'
 
 
 const Contact: React.FC<IContact> = () => {
@@ -98,6 +99,7 @@ const Contact: React.FC<IContact> = () => {
 
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
