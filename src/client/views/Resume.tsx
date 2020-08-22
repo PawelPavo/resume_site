@@ -101,8 +101,8 @@ const Resume: React.FC<IResume> = () => {
                                 {show ?
                                     <div>
                                         <h4 className="text-center">Playwire</h4>
-                                        <h6>Client Relations Executive</h6>
-                                        <p>DeerfieldBeac​h, FL</p>
+                                        <h6>Client Relations Manager</h6>
+                                        <p>DeerfieldBeac​h, FL - <small> (Mar 2018 - Apr 2019)</small></p>
                                         <p>
                                             <small className="text-muted"><GoTriangleRight />Assisted key publishers with questions and concerns regarding their accounts</small>
                                         </p>
@@ -132,8 +132,8 @@ const Resume: React.FC<IResume> = () => {
                                     :
                                     <div>
                                         <h4 className="text-center">Stanger Injury Treatment Centers</h4>
-                                        <h6>Operations Manager </h6>
-                                        <p>Delray Beach, FL</p>
+                                        <h6>Office Supervisor</h6>
+                                        <p>Delray Beach, FL - <small> (Aug 2015 - Mar 2018)</small></p>
                                         <p>
                                             <small className="text-muted"><GoTriangleRight />Established the company’s technical vision and major aspects of the company’s technological development</small>
                                         </p>

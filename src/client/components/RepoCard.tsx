@@ -16,9 +16,8 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
     const imageClick = () => {
         Swal.fire({
             imageUrl: props.repo.repo_image_url,
-            width: 1000,
-            imageWidth: 1000,
-            imageHeight: 600,
+            imageWidth: 400,
+            imageHeight: 200,
             background: `
             rgba(47,54,64,0.7)
             left top
@@ -62,7 +61,7 @@ const RepoCard: React.FC<IRepoCard> = (props) => {
                         </div>
 
                         <div className="col-md-8 my-auto pt-3">
-                            <div className="text-monospace" style={{ textAlign: "justify" }}><small>{props.repo.repo_description}</small></div>
+                            <div className="" style={{ textAlign: "justify" }}><small>{props.repo.repo_description}</small></div>
                         </div>
                     </div>
                     <div className="row justify-content-end mt-1 pr-md-3">
