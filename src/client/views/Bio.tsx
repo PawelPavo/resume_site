@@ -48,7 +48,6 @@ const AboutMe: React.FC<IAboutMe> = () => {
                         <ul>
                             <li>Go</li>
                             <li>Python</li>
-                            <li>React</li>
                             <li>JS Testing frameworks such as Mocha / Jest</li>
                             <li>Node with Chai </li>
                             <li>React utility Enzyme</li>
